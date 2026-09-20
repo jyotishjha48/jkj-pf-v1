@@ -1,0 +1,60 @@
+{"items": [
+  {
+    "id": "steam-officer",
+    "title": "STEAM Officer",
+    "organization": "Kopila Valley Sewa Samaj / Blinknow",
+    "location": "Surkhet, Nepal",
+    "startDate": "May 2025",
+    "endDate": "Present",
+    "type": "professional",
+    "responsibilities": [
+      "Designed and set up a Makerspace lab / incubation center integrating robotics, electronics, and CAD design.",
+      "Developed STEM curriculum covering design thinking, entrepreneurship, robotics, and sustainable technologies.",
+      "Fostered incubation and entrepreneurship culture; provided mentorship to students."
+    ],
+    "technologies": ["Robotics", "CAD", "Electronics"]
+  },
+  {
+    "id": "multiscope",
+    "title": "Mechanical Engineer",
+    "organization": "Multiscope and Green Innovative Solution",
+    "location": "Pulchowk, Nepal",
+    "startDate": "Dec 2024",
+    "endDate": "Apr 2025",
+    "type": "professional",
+    "responsibilities": [
+      "Conducted energy audits in residential and commercial sectors; drafted and reviewed reports, Terms of Reference (TORs), and policy guidelines.",
+      "Assisted in the design and drafting of sugar and jaggery production machinery using SolidWorks.",
+      "Used MS Excel, OriginPro, and MATLAB/Simulink for data modeling, visualization, and system simulations."
+    ],
+    "technologies": ["SolidWorks", "MATLAB/Simulink", "MS Excel", "OriginPro"]
+  },
+  {
+    "id": "narc",
+    "title": "Research Intern",
+    "organization": "Nepal Agricultural Research Council (NARC)",
+    "location": "Khumaltar, Nepal",
+    "startDate": "Jun 2024",
+    "endDate": "Nov 2024",
+    "type": "research",
+    "responsibilities": [
+      "Built an IoT-based soil moisture monitoring system for sustainable irrigation."
+    ],
+    "technologies": ["IoT", "Arduino", "ESP32"],
+    "relatedProjectIds": []
+  },
+  {
+    "id": "nast",
+    "title": "Research Intern",
+    "organization": "Nepal Academy of Science and Technology (NAST)",
+    "location": "Khumaltar, Nepal",
+    "startDate": "Jan 2024",
+    "endDate": "May 2024",
+    "type": "research",
+    "responsibilities": [
+      "Analyzed case studies on converting ICE vehicles to EVs and proposed policies for Nepal, addressing infrastructure needs and long-term EV adoption strategies."
+    ],
+    "technologies": [],
+    "relatedProjectIds": ["ice-to-ev"]
+  }
+]}

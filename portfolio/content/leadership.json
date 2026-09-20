@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "id": "ku-robotics-club",
+      "organization": "Kathmandu University Robotics Club",
+      "location": "Dhulikhel, Nepal",
+      "period": "2020 – 2024",
+      "roles": [
+        {
+          "title": "President",
+          "responsibilities": [
+            "Led Aavishkar '24: 3,500+ attendees, 19 institutions, 5 robotics competitions, 7 STEM workshops.",
+            "Partnered with 15+ college communities and increased revenue 3x.",
+            "Provided hands-on robotics training to 200+ students in collaboration with local municipalities."
+          ]
+        },
+        {
+          "title": "Event Manager",
+          "responsibilities": [
+            "Led a 50-member team executing 10+ workshops on robotics, hackathons, and bot competitions."
+          ]
+        },
+        {
+          "title": "Vice Secretary",
+          "responsibilities": [
+            "Managed meetings, communications, and projects; secured funding for projects and competitions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amnesty-ku",
+      "organization": "Amnesty International, Kathmandu University Youth Network",
+      "location": "Dhulikhel, Nepal",
+      "period": "Sept 2019 – Apr 2023",
+      "roles": [
+        {
+          "title": "Member",
+          "responsibilities": [
+            "Co-organized an \"Idea, Innovation, and Industry\" online seminar.",
+            "Instructed 110+ students on sanitation and climate change in a 2-day community program."
+          ]
+        }
+      ]
+    }
+  ]
+}

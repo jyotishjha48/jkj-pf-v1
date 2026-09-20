@@ -1,0 +1,17 @@
+{
+  "name": "Jyotish Kumar Jha",
+  "location": "Tilathi-Koiladi-1, Saptari, Madhesh Province, Nepal",
+  "email": "jyotishkumarjha48@gmail.com",
+  "phone": "+977 9842747237",
+  "linkedin": "https://linkedin.com/in/jyotishkrjha/",
+  "website": "https://jyotishkumarjha.com.np",
+  "title": "Mechanical Engineer",
+  "subtitle": "Robotics / AI / Autonomous Systems",
+  "missionStatement": "I want to understand and build systems that can bridge the gap between perception and action. My goal is to develop robust pipelines that take input from sensors, interpret the surrounding environment, and use that information for spatial reasoning, motion planning, and decision-making. I am particularly interested in how these systems can operate reliably in complex and uncertain real-world environments.",
+  "researchInterests": [
+    "Motion Planning",
+    "Multi-Robot Coordination",
+    "Integrated Task and Motion Planning (TAMP)",
+    "Algorithmic Decision-Making under Computational & Geometric Constraints"
+  ]
+}

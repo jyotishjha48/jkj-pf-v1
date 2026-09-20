@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "robotics-foundations",
+      "slug": "robotics-foundations",
+      "title": "Robotics Foundations: Sensors, Motion and Control",
+      "date": "2024-03-16",
+      "category": "Robotics",
+      "excerpt": "A hands-on introduction to sensors, actuators, Arduino control, and reliable robot motion for student builders.",
+      "content": "This workshop guided students through sensor wiring, actuator control, simple feedback loops, and safe robot testing. Participants finished with a small obstacle-avoidance prototype and a clearer path from a physical problem to a working control system.",
+      "readTimeMinutes": 5,
+      "featured": true,
+      "isPlaceholder": true
+    },
+    {
+      "id": "ai-for-stem",
+      "slug": "ai-for-stem",
+      "title": "Applied AI for STEM Projects",
+      "date": "2023-11-04",
+      "category": "AI",
+      "excerpt": "A practical session on turning datasets into useful engineering decisions with Python and machine learning.",
+      "content": "Students explored data preparation, model evaluation, and responsible interpretation through a compact engineering prediction exercise. The session connected software experimentation with measurable physical-world outcomes.",
+      "readTimeMinutes": 4,
+      "featured": true,
+      "isPlaceholder": true
+    }
+  ]
+}

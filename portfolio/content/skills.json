@@ -1,0 +1,106 @@
+{"items": [
+  {
+    "id": "python",
+    "name": "Python",
+    "category": "Programming",
+    "detail": "NumPy, Matplotlib",
+    "evidenceProjectIds": ["path-planning", "fuel-cell-scooter"],
+    "evidenceExperienceIds": ["multiscope"]
+  },
+  {
+    "id": "matlab",
+    "name": "MATLAB",
+    "category": "Programming",
+    "detail": "Image Processing Toolbox, Autonomous Driving Toolbox",
+    "evidenceProjectIds": ["path-planning", "fuel-cell-scooter"],
+    "evidenceExperienceIds": ["multiscope"]
+  },
+  {
+    "id": "cpp",
+    "name": "C++",
+    "category": "Programming",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": []
+  },
+  {
+    "id": "ros2",
+    "name": "ROS 2",
+    "category": "Software",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": []
+  },
+  {
+    "id": "solidworks",
+    "name": "SolidWorks",
+    "category": "Software",
+    "detail": "",
+    "evidenceProjectIds": ["scara-robot"],
+    "evidenceExperienceIds": ["multiscope"]
+  },
+  {
+    "id": "excel",
+    "name": "MS Excel",
+    "category": "Software",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": ["multiscope"]
+  },
+  {
+    "id": "originpro",
+    "name": "OriginPro",
+    "category": "Software",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": ["multiscope"]
+  },
+  {
+    "id": "ms-office",
+    "name": "MS Office Suite",
+    "category": "Software",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": ["multiscope", "narc", "nast"]
+  },
+  {
+    "id": "arduino",
+    "name": "Arduino",
+    "category": "Microcontrollers",
+    "detail": "",
+    "evidenceProjectIds": ["scara-robot"],
+    "evidenceExperienceIds": ["narc"]
+  },
+  {
+    "id": "esp32",
+    "name": "ESP32",
+    "category": "Microcontrollers",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": ["narc"]
+  },
+  {
+    "id": "english",
+    "name": "English",
+    "category": "Languages",
+    "detail": "IELTS: 7.5 overall (L:8.5, R:8, W:6, S:7.5) — C1 proficiency",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": []
+  },
+  {
+    "id": "hindi",
+    "name": "Hindi",
+    "category": "Languages",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": []
+  },
+  {
+    "id": "nepali",
+    "name": "Nepali",
+    "category": "Languages",
+    "detail": "",
+    "evidenceProjectIds": [],
+    "evidenceExperienceIds": []
+  }
+]}

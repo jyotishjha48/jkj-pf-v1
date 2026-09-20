@@ -1,0 +1,20 @@
+{"items": [
+  {
+    "id": "ml-specialization",
+    "title": "Machine Learning Specialization",
+    "instructor": "Andrew Ng",
+    "issuer": "DeepLearning.AI",
+    "period": "Aug 2025 – Current",
+    "description": "Building and training ML models in Python using NumPy, scikit-learn, and TensorFlow — from linear/logistic regression to neural networks, decision trees, and ensemble methods (random forests, boosted trees).",
+    "technologies": ["Python", "NumPy", "scikit-learn", "TensorFlow"]
+  },
+  {
+    "id": "pytorch-cert",
+    "title": "PyTorch for Deep Learning Professional Certificate",
+    "instructor": "",
+    "issuer": "DeepLearning.AI",
+    "period": "Sep 2025 – Current",
+    "description": "Building neural networks from scratch in PyTorch; working with TorchVision and Hugging Face models; fine-tuning pretrained models; exploring Siamese networks, ResNets, and Transformers; preparing models for deployment with ONNX, MLflow, pruning, and quantization.",
+    "technologies": ["PyTorch", "TorchVision", "Hugging Face", "ONNX", "MLflow"]
+  }
+]}
