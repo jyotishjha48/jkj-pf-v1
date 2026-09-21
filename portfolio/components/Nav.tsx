@@ -107,11 +107,6 @@ export function Nav() {
               )}
             </li>
           ))}
-          <li>
-            <Link href="/admin-login?from=%2Fkeystatic" className="ml-2 rounded px-3 py-1.5 text-xs font-mono tracking-widest text-text-secondary hover:bg-surface-2 hover:text-accent">
-              EDITOR
-            </Link>
-          </li>
           <li className="ml-2"><ThemeToggle /></li>
         </ul>
 
@@ -161,11 +156,6 @@ export function Nav() {
                 )}
               </li>
             ))}
-            <li>
-              <Link href="/admin-login?from=%2Fkeystatic" onClick={() => setMenuOpen(false)} className="block rounded px-3 py-2 text-sm font-mono tracking-widest text-text-secondary hover:text-accent">
-                EDITOR
-              </Link>
-            </li>
           </ul>
         </div>
       )}

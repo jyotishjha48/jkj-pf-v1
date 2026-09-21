@@ -40,6 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="night"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-background text-text-primary min-h-screen flex flex-col">
