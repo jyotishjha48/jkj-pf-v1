@@ -51,10 +51,9 @@ export function Nav() {
       href: "/blog",
       label: siteSettings.navLog || "LOG",
       children: [
-        { href: "/blog", label: "ALL POSTS" },
         { href: "/blog?category=Robotics", label: "ROBOTICS" },
         { href: "/blog?category=AI", label: "AI" },
-        { href: "/blog?category=Engineering", label: "ENGINEERING" },
+        { href: "/blog?category=Engineering", label: "DESIGN" },
         { href: "/blog?category=Research", label: "RESEARCH" },
         { href: "/blog?category=Learning", label: "LEARNING" },
       ],

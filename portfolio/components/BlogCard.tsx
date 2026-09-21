@@ -16,6 +16,7 @@ const categoryColors: Record<BlogPost["category"], string> = {
 export function BlogCard({ post }: { post: BlogPost }) {
   const [saved, setSaved] = useState(false);
   const categoryColor = categoryColors[post.category];
+  const categoryLabel = post.category === "Engineering" ? "DESIGN" : post.category.toUpperCase();
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-surface-2 bg-surface-2 transition-all duration-200 hover:-translate-y-1 hover:border-accent/70 motion-reduce:transform-none">
@@ -27,7 +28,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" aria-hidden="true" />
         <span className={`absolute left-3 top-3 rounded-full bg-surface/90 px-2.5 py-1 font-mono text-[10px] tracking-widest ${categoryColor}`}>
-          ● {post.category.toUpperCase()}
+          ● {categoryLabel}
         </span>
         <button
           type="button"

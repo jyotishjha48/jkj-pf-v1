@@ -11,7 +11,7 @@ export default function PortfolioPage() {
       <SectionHeader
         missionId="MISSION CONTROL"
         title={siteSettings.missionsHeader || "Mission Overview"}
-        subtitle="All projects and workshops."
+        subtitle={siteSettings.missionsIntro || "All projects and workshops."}
       />
 
       <div className="flex flex-wrap gap-3 mb-10">

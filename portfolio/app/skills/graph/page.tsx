@@ -65,8 +65,28 @@ export default function CapabilityGraphPage() {
       </div>
 
       {/* SVG Graph — hidden on small screens, list shown instead */}
-      <div className="hidden md:block bg-surface border border-surface-2 rounded p-4 mb-6">
-        <svg viewBox="0 0 780 470" className="w-full" role="img" aria-label="Capability graph">
+      <div className="relative hidden overflow-hidden rounded-xl border border-accent/30 bg-[#071016] p-4 mb-6 shadow-[0_0_40px_rgba(34,211,238,.08)] md:block">
+        <div className="pointer-events-none absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(34,211,238,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,.22) 1px, transparent 1px)", backgroundSize: "34px 34px" }} />
+        {activeSkill && (
+          <div className="absolute right-6 top-6 z-10 w-64 rounded-lg border border-accent/50 bg-background/95 p-4 shadow-2xl backdrop-blur">
+            <p className="font-mono text-[10px] tracking-widest text-accent">LIVE NODE READOUT</p>
+            <h3 className="mt-2 font-heading font-semibold text-text-primary">{activeSkill.name}</h3>
+            <p className="mt-1 text-xs leading-5 text-text-secondary">{activeSkill.detail || "Capability node in the autonomy stack."}</p>
+            <p className="mt-3 font-mono text-[10px] tracking-widest text-text-secondary">{activeSkill.category.toUpperCase()}</p>
+          </div>
+        )}
+        <svg viewBox="0 0 780 470" className="relative z-[1] w-full" role="img" aria-label="Interactive autonomy capability constellation">
+          <defs>
+            <filter id="node-glow">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <circle cx="390" cy="235" r="112" fill="none" stroke="#22D3EE" strokeOpacity=".14" strokeDasharray="3 9" />
+          <circle cx="390" cy="235" r="72" fill="#0b1b24" stroke="#22D3EE" strokeOpacity=".6" />
+          <circle cx="390" cy="235" r="52" fill="#071016" stroke="#22D3EE" strokeOpacity=".3" />
+          <text x="390" y="231" textAnchor="middle" fill="#22D3EE" fontSize="12" fontFamily="var(--font-jetbrains-mono), monospace" letterSpacing="2">AUTONOMY</text>
+          <text x="390" y="249" textAnchor="middle" fill="#9BA6B2" fontSize="9" fontFamily="var(--font-jetbrains-mono), monospace">STACK CORE</text>
           {skills.map((skill) => {
             const pos = NODE_POSITIONS[skill.id];
             if (!pos) return null;
@@ -74,6 +94,7 @@ export default function CapabilityGraphPage() {
             const isActive = activeSkill?.id === skill.id;
             return (
               <g key={skill.id}>
+                <line x1="390" y1="235" x2={pos.x} y2={pos.y} stroke={color} strokeOpacity=".2" strokeDasharray="4 8" />
                 <circle
                   cx={pos.x}
                   cy={pos.y}
@@ -81,7 +102,8 @@ export default function CapabilityGraphPage() {
                   fill={isActive ? color : "#101820"}
                   stroke={color}
                   strokeWidth={isActive ? 2.5 : 1.5}
-                  className="cursor-pointer transition-all"
+                  filter={isActive ? "url(#node-glow)" : undefined}
+                  className="cursor-pointer"
                   tabIndex={0}
                   role="button"
                   aria-pressed={isActive}

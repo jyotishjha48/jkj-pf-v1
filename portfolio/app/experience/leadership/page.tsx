@@ -1,24 +1,18 @@
-import Link from "next/link";
 import { leadership } from "@/data/leadership";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
+import { siteSettings } from "@/data/site-settings";
+import { ExperienceTabs } from "@/components/ExperienceTabs";
 
 export default function LeadershipPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
       <SectionHeader
         missionId="SUBSYSTEM / EXPERIENCE"
-        title="Leadership & Volunteer Experience"
-        subtitle="Community leadership, robotics education, and volunteer service."
+        title={siteSettings.leadershipHeader || "Leadership & Volunteer Experience"}
+        subtitle={siteSettings.leadershipIntro || "Community leadership, robotics education, and volunteer service."}
       />
-      <div className="mb-10 flex flex-wrap gap-3">
-        <Link href="/experience" className="font-mono text-xs tracking-widest text-text-secondary hover:text-accent">TRAJECTORY</Link>
-        <Link href="/experience/professional" className="font-mono text-xs tracking-widest text-text-secondary hover:text-accent">PROFESSIONAL</Link>
-        <Link href="/experience/research" className="font-mono text-xs tracking-widest text-text-secondary hover:text-accent">RESEARCH</Link>
-        <Link href="/experience/certifications" className="font-mono text-xs tracking-widest text-text-secondary hover:text-accent">CERTIFICATIONS</Link>
-        <Link href="/experience/awards" className="font-mono text-xs tracking-widest text-text-secondary hover:text-accent">AWARDS</Link>
-        <span className="font-mono text-xs tracking-widest text-accent">LEADERSHIP & VOLUNTEERING</span>
-      </div>
+      <ExperienceTabs />
       <div className="space-y-6">
         {leadership.map((entry) => (
           <article key={entry.id} className="rounded border border-surface-2 bg-surface p-6">

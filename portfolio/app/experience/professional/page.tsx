@@ -1,34 +1,20 @@
-import Link from "next/link";
 import { experiences } from "@/data/experience";
 import { SectionHeader } from "@/components/SectionHeader";
+import { siteSettings } from "@/data/site-settings";
+import { ExperienceTabs } from "@/components/ExperienceTabs";
 
 export default function ProfessionalExperiencePage() {
   const professional = experiences.filter((e) => e.type === "professional");
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <SectionHeader missionId="SUBSYSTEM / EXPERIENCE" title="Professional Experience" />
+      <SectionHeader
+        missionId="SUBSYSTEM / EXPERIENCE"
+        title={siteSettings.professionalHeader || "Professional Experience"}
+        subtitle={siteSettings.professionalIntro}
+      />
 
-      <div className="flex flex-wrap gap-3 mb-10">
-        {[
-          { href: "/experience", label: "TRAJECTORY" },
-          { href: "/experience/professional", label: "PROFESSIONAL" },
-          { href: "/experience/research", label: "RESEARCH" },
-          { href: "/experience/certifications", label: "CERTIFICATIONS" },
-          { href: "/experience/awards", label: "AWARDS" },
-          { href: "/experience/leadership", label: "LEADERSHIP & VOLUNTEERING" },
-        ].map((l) => (
-          <Link key={l.href} href={l.href}
-            className={`font-mono text-xs px-3 py-1.5 rounded border tracking-widest transition-colors ${
-              l.href === "/experience/professional"
-                ? "border-accent text-accent bg-accent/10"
-                : "border-surface-2 text-text-secondary hover:border-accent/50"
-            }`}
-          >
-            {l.label}
-          </Link>
-        ))}
-      </div>
+      <ExperienceTabs />
 
       <div className="space-y-6">
         {professional.map((exp) => (

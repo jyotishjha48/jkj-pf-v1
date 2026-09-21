@@ -19,7 +19,7 @@ export default function SkillsPage() {
       <SectionHeader
         missionId="SUBSYSTEM / SKILLS"
         title={siteSettings.skillsHeader || "Technical Skills"}
-        subtitle="All skills mapped to real project and experience evidence."
+        subtitle={siteSettings.skillsIntro || "All skills mapped to real project and experience evidence."}
       />
 
       <div className="flex flex-wrap gap-3 mb-10">

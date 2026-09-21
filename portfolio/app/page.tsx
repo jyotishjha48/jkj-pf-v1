@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, type CSSProperties } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { projects } from "@/data/projects";
@@ -53,6 +53,7 @@ export default function HomePage() {
   const [bootDone, setBootDone] = useState(false);
   const [visibleLines, setVisibleLines] = useState<number>(0);
   const [heroVisible, setHeroVisible] = useState(false);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
   const hasBooted = useRef(false);
 
   useEffect(() => {
@@ -92,6 +93,14 @@ export default function HomePage() {
   }, [prefersReduced]);
 
   const featuredProjects = projects.slice(0, 4);
+
+  useEffect(() => {
+    if (featuredProjects.length < 2) return;
+    const interval = window.setInterval(() => {
+      setFeaturedIndex((index) => (index + 1) % featuredProjects.length);
+    }, 4500);
+    return () => window.clearInterval(interval);
+  }, [featuredProjects.length]);
 
   return (
     <div className="min-h-screen">
@@ -227,8 +236,8 @@ export default function HomePage() {
       </section>
 
       {/* Featured Missions */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
-        <div className="mb-8 flex items-end justify-between gap-4">
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6">
+        <div className="mb-5 flex items-end justify-between gap-4">
           <div>
             <p className="mb-2 font-mono text-xs tracking-[0.2em] text-accent">MISSION FEED / PROJECT PREVIEWS</p>
             <motion.h2
@@ -247,26 +256,30 @@ export default function HomePage() {
             VIEW ALL →
           </Link>
         </div>
-        <div className="grid gap-7 lg:grid-cols-2">
-          {featuredProjects.map((project, i) => (
+        <div className="relative mx-auto max-w-6xl overflow-hidden">
+          <div
+            className="featured-project-track flex gap-4"
+            style={{ "--featured-slide": featuredIndex } as CSSProperties}
+          >
+          {[...featuredProjects, ...featuredProjects].map((project, i) => (
             <motion.div
-              key={project.id}
-              initial={prefersReduced ? {} : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.4 }}
+              key={`${project.id}-${i}`}
+              className="w-full shrink-0 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333333%-0.666667rem)]"
+              initial={false}
+              animate={{ opacity: i >= featuredIndex && i < featuredIndex + 3 ? 1 : 0.55 }}
+              transition={{ duration: 0.35 }}
             >
               <Link
                 href={`/portfolio/projects/${project.slug}`}
-                className="group block h-full overflow-hidden rounded-xl border border-surface-2 bg-surface transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl hover:shadow-accent/10"
+                className="group mx-auto flex aspect-square w-full max-w-[360px] flex-col overflow-hidden rounded-xl border border-accent/30 bg-surface transition-all hover:border-accent/70 hover:shadow-xl hover:shadow-accent/10"
               >
-                <div className="relative h-64 overflow-hidden border-b border-surface-2 bg-gradient-to-br from-accent/15 via-surface-2 to-success/10">
+                <div className="relative min-h-0 flex-1 overflow-hidden border-b border-surface-2 bg-gradient-to-br from-accent/15 via-surface-2 to-success/10">
                   {project.image ? (
                     <Image
                       src={project.image}
                       alt={`${project.title} preview`}
                       fill
-                      sizes="(min-width: 640px) 50vw, 100vw"
+                      sizes="(min-width: 640px) 540px, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
@@ -291,15 +304,15 @@ export default function HomePage() {
                     <p className="mt-1 line-clamp-1 text-sm font-medium text-text-primary">{project.objective}</p>
                   </div>
                 </div>
-                <div className="p-7">
-                  <div className="mb-3 flex items-center justify-between gap-3">
+                <div className="p-4">
+                  <div className="mb-2 flex items-center justify-between gap-3">
                     <span className="font-mono text-[10px] tracking-[0.16em] text-text-secondary">{project.category}</span>
                     <span className="font-mono text-[10px] text-accent">{project.period}</span>
                   </div>
-                  <h3 className="mb-3 font-heading text-xl font-semibold text-text-primary transition-colors group-hover:text-accent">
+                  <h3 className="mb-2 line-clamp-2 font-heading text-lg font-semibold text-text-primary transition-colors group-hover:text-accent">
                     {project.title}
                   </h3>
-                  <p className="mb-5 line-clamp-3 text-sm leading-7 text-text-secondary">
+                  <p className="mb-3 line-clamp-1 text-xs leading-5 text-text-secondary">
                     {project.objective}
                   </p>
                   <div className="flex items-center justify-between gap-4">
@@ -318,6 +331,21 @@ export default function HomePage() {
               </Link>
             </motion.div>
           ))}
+          </div>
+          <div className="mt-5 flex items-center justify-center gap-2" aria-label="Featured project slides">
+            {featuredProjects.map((project, i) => (
+              <button
+                key={project.id}
+                type="button"
+                onClick={() => setFeaturedIndex(i)}
+                aria-label={`Show featured project ${i + 1}`}
+                aria-pressed={i === featuredIndex}
+                className={`h-2.5 w-2.5 rounded-full border transition-colors ${
+                  i === featuredIndex ? "border-accent bg-accent" : "border-text-secondary/50 bg-transparent"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

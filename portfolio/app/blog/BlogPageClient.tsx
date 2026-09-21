@@ -7,28 +7,31 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { BlogCard } from "@/components/BlogCard";
 import { siteSettings } from "@/data/site-settings";
 
-const CATEGORIES = ["All", "Robotics", "AI", "Engineering", "Research", "Learning"] as const;
+const CATEGORIES = ["All", "Robotics", "AI", "Design", "Research", "Learning"] as const;
 type Category = (typeof CATEGORIES)[number];
 
 export default function BlogPageClient() {
   const searchParams = useSearchParams();
   const requestedCategory = searchParams.get("category");
-  const initialCategory = CATEGORIES.includes(requestedCategory as Category)
-    ? (requestedCategory as Category)
+  const requestedDisplayCategory = requestedCategory === "Engineering" ? "Design" : requestedCategory;
+  const initialCategory = CATEGORIES.includes(requestedDisplayCategory as Category)
+    ? (requestedDisplayCategory as Category)
     : "All";
   const [active, setActive] = useState<Category>(initialCategory);
-  const filtered = active === "All" ? blogPosts : blogPosts.filter((p) => p.category === active);
+  const filtered = active === "All"
+    ? blogPosts
+    : blogPosts.filter((p) => p.category === (active === "Design" ? "Engineering" : active));
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
       <SectionHeader
         missionId="SYSTEM LOG"
         title={siteSettings.blogHeader || "Blog"}
-        subtitle="Writing on robotics, AI, engineering, and learning."
+        subtitle={siteSettings.blogIntro || "Writing on robotics, AI, engineering, and learning."}
       />
 
       <div className="flex flex-wrap gap-2 mb-10" role="group" aria-label="Filter by category">
-        {CATEGORIES.map((cat) => (
+        {CATEGORIES.filter((cat) => cat !== "All").map((cat) => (
           <button
             key={cat}
             onClick={() => setActive(cat)}

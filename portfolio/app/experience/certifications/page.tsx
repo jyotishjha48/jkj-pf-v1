@@ -1,33 +1,19 @@
-import Link from "next/link";
 import { certifications } from "@/data/certifications";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
+import { siteSettings } from "@/data/site-settings";
+import { ExperienceTabs } from "@/components/ExperienceTabs";
 
 export default function CertificationsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <SectionHeader missionId="SUBSYSTEM / EXPERIENCE" title="Certifications" />
+      <SectionHeader
+        missionId="SUBSYSTEM / EXPERIENCE"
+        title={siteSettings.certificationsHeader || "Certifications"}
+        subtitle={siteSettings.certificationsIntro}
+      />
 
-      <div className="flex flex-wrap gap-3 mb-10">
-        {[
-          { href: "/experience", label: "TRAJECTORY" },
-          { href: "/experience/professional", label: "PROFESSIONAL" },
-          { href: "/experience/research", label: "RESEARCH" },
-          { href: "/experience/certifications", label: "CERTIFICATIONS" },
-          { href: "/experience/awards", label: "AWARDS" },
-          { href: "/experience/leadership", label: "LEADERSHIP & VOLUNTEERING" },
-        ].map((l) => (
-          <Link key={l.href} href={l.href}
-            className={`font-mono text-xs px-3 py-1.5 rounded border tracking-widest transition-colors ${
-              l.href === "/experience/certifications"
-                ? "border-accent text-accent bg-accent/10"
-                : "border-surface-2 text-text-secondary hover:border-accent/50"
-            }`}
-          >
-            {l.label}
-          </Link>
-        ))}
-      </div>
+      <ExperienceTabs />
 
       <div className="space-y-6">
         {certifications.map((cert) => (

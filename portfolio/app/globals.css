@@ -123,15 +123,44 @@ button:active {
   }
 }
 
+.featured-project-track {
+  --featured-slide-step: calc(100% + 1rem);
+  transform: translateX(calc(var(--featured-slide) * -1 * var(--featured-slide-step)));
+  transition: transform 700ms ease-in-out;
+}
+
 @media (min-width: 768px) {
+  .featured-project-track {
+    --featured-slide-step: calc(50% + 0.5rem);
+  }
+
   body:has(.cms-preview-panel) .cms-editor-shell {
-    width: 50%;
+    width: 100%;
     min-height: calc(100vh - 4rem);
     overflow: visible;
   }
 
+  @media (min-width: 1024px) {
+    .featured-project-track {
+      --featured-slide-step: calc(33.333333% + 0.666667rem);
+    }
+  }
+
   body:has(.cms-preview-panel) .cms-preview-panel {
-    top: 4rem;
-    width: 50%;
+    top: 5rem;
+    right: 1rem;
+    bottom: auto;
+    width: min(38vw, 420px);
+    height: min(38vw, 420px);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    border-radius: 0.5rem;
+  }
+
+  body:has(.cms-preview-panel) .cms-preview-panel > div {
+    height: 2.5rem;
+  }
+
+  body:has(.cms-preview-panel) .cms-preview-panel iframe {
+    height: calc(100% - 2.5rem);
   }
 }
