@@ -24,7 +24,7 @@ const bootLines = [
 function AutonomyVisualization({ reducedMotion }: { reducedMotion: boolean }) {
   return (
     <div
-      className="pointer-events-none absolute inset-x-4 bottom-8 mx-auto h-44 max-w-xl opacity-80 sm:h-56"
+      className="hero-visualization pointer-events-none absolute inset-x-4 bottom-4 z-0 mx-auto h-32 max-w-xl opacity-80 sm:h-44"
       aria-label="Conceptual visualization of sensing, world modeling, planning, coordination, control, and feedback"
       role="img"
     >
@@ -101,7 +101,7 @@ export default function HomePage() {
         </div>
       )}
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-surface-2">
+      <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden border-b border-surface-2">
         {/* Grid background */}
         <div
           className="absolute inset-0 opacity-10"
@@ -122,7 +122,7 @@ export default function HomePage() {
         <AutonomyVisualization reducedMotion={Boolean(prefersReduced)} />
 
         <motion.div
-          className="relative z-10 -mt-32 px-4 text-center sm:-mt-40"
+          className="relative z-10 w-full px-4 pb-44 pt-16 text-center sm:pb-52 sm:pt-20"
           initial={heroVisible ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -144,13 +144,13 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/portfolio/projects"
+              href="/contact"
               className="px-6 py-3 bg-accent text-background font-mono text-sm font-bold tracking-widest hover:bg-accent/90 transition-colors rounded"
             >
               [ {siteSettings.heroCTA1 || "EXPLORE SYSTEM"} ]
             </Link>
             <Link
-              href="/contact"
+              href="/portfolio/projects"
               className="px-6 py-3 border border-accent/40 text-accent font-mono text-sm tracking-widest hover:bg-accent/10 transition-colors rounded"
             >
               [ {siteSettings.heroCTA2 || "VIEW PROJECTS"} ]
